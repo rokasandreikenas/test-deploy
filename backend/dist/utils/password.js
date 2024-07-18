@@ -7,7 +7,7 @@ exports.generateToken = void 0;
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 const expiresIn = "90d";
 const generateToken = (payload) => {
-    const token = jsonwebtoken_1.default.sign(payload, process.env.JWT_SECRET, { expiresIn });
+    const token = jsonwebtoken_1.default.sign({ payload }, process.env.JWT_SECRET, { expiresIn });
     return token;
 };
 exports.generateToken = generateToken;
